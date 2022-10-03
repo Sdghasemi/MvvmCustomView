@@ -18,7 +18,23 @@ object RectanglesRemoteDataSource : RectanglesDataSource {
      * @return Server response of the network call
      */
     override suspend fun getRectangles(): GenericResponse<RectanglesResponseModel> {
-        return ApiClient.retrofit.getRectangles()
+//        return ApiClient.retrofit.getRectangles()
+        return NetworkResponse.Success(RectanglesResponseModel(
+            rectangles = arrayListOf(
+                RectangleItemModel(
+                    id = 513,
+                    x = 0.5f,
+                    y = 0.5f,
+                    size = 0.2f
+                ),
+                RectangleItemModel(
+                    id = 3,
+                    x = 0.7f,
+                    y = 0.7f,
+                    size = 0.2f
+                )
+            )
+        ))
     }
 
     override suspend fun cacheRectangles(rectangles: RectanglesResponseModel): Boolean {
