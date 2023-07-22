@@ -8,7 +8,7 @@
 
         <variable
             name="viewmodel"
-            type="com.hirno.assignment.ui.main.MainViewModel" />
+            type="com.hirno.rectangles.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <com.hirno.assignment.ui.view.RectanglesView
+        <com.hirno.rectangles.ui.view.RectanglesView
             android:id="@+id/rectangles"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -1,5 +1,7 @@
-# Peaks Assignment App
+# Rectangles Custom View
 This is a sample app using a fictional endpoint to retrieve rectangles properties and display them in a custom view.
+
+Rectangles are placed around the screen based on their size and coordinates. User can drag them around the screen and update cached their position.
 
 The app is written in pure Kotlin and is using Kotlin Gradle DSL for gradle scripts as well.
 
@@ -13,7 +15,8 @@ If there was an error retrieving data, a relevant message would inform the user 
 The application reaches the endpoint and caches the response. The cache expires after 1 week of inactivity.
 When the cache is ready and valid (not expired) no endpoint call is made and the UI is populated purely with the cache itself.
 
-The images displayed as thumbnails are also cached for better experience.
+## Architecture
+Built with MVVM clean code.
 
 ## Libraries
 <ul>
@@ -22,12 +25,39 @@ The images displayed as thumbnails are also cached for better experience.
 <li>Room for caching and Database manipulation</li>
 </ul>
 
-## Decisions
-In order to draw rectangles, either using paint or declaring a drawable would do the job. Also the performance was almost the same.
-I decided to use the drawable to enable the developer for better future changes and easier control over the shape of the rectangle.
+## Testing
+- #### Unit Testing
+  - Contains ViewModel tests with fake repository
+- #### UI Testing
+  - Main fragment internet connectivity test and rectangles user interactions included
 
-The base API url of the endpoint was not clear from the assignment, so I asked Tjerk and turns out the API is fictional so
-I decided to use "https://example.com/".
+### API
+```
+  GET /resourcer/v1/rectangles HTTP/1.1
+
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+  {
+    "rectangles": [
+      {
+        "x": 0.5,
+        "y": 0.5,
+        "size": 0.2
+      },
+      {
+        "x": 0.7,
+        "y": 0.7,
+        "size": 0.2
+      }
+    ]
+  }
+```
+- `rectangles`: list of rectangles.
+- `x` and `y`: position of the rectangle relative to the screen. E.g. x:0.5, y:0.5 means a
+  rectangle in the centre of the screen.
+- `size`: the size of the rectangle in percentage relative to the screen. E.g. size:0.1
+  means a width of 10% of the width of the screen and a height of 10% of the height of
+  the screen.
 
 ### Contact developer
 

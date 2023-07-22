@@ -10,7 +10,7 @@ android {
     compileSdk = 32
 
     defaultConfig {
-        applicationId = "com.hirno.assignment"
+        applicationId = "com.hirno.rectangles"
         minSdk = 21
         targetSdk = 32
         versionCode = 1
