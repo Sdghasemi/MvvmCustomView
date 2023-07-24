@@ -40,6 +40,7 @@ android {
             jvmTarget = "11"
         }
     }
+    namespace = "com.hirno.rectangles"
 }
 
 dependencies {
