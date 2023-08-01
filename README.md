@@ -59,6 +59,9 @@ Built with MVVM clean code.
   means a width of 10% of the width of the screen and a height of 10% of the height of
   the screen.
 
+## APK
+A [pre-built APK](app-debug.apk) is placed in the root of the project for your convenience.
+
 ### Contact developer
 
 If there's ***anything*** you'd like to discuss, feel free to contact me at [Sd.ghasemi1@gmail.com](mailto:Sd.ghasemi1@gmail.com).
